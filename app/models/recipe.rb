@@ -11,5 +11,5 @@
 #
 
 class Recipe < ActiveRecord::Base
-  attr_accessible :author, :steps
+  attr_accessible :author, :steps,:time
 end
