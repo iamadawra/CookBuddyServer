@@ -1,4 +1,7 @@
 CookBuddy::Application.routes.draw do
+  resources :users
+
+
   resources :recipes
 
 
