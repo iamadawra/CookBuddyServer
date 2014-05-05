@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
 
   # GET /find_recipes_by_cooking_time.json
   def find_recipes_by_cooking_time
-    @recipes = Recipe.search_by_cooking_time(params[:cookingtime])
+    @recipes = Recipe.search_recipes_by_cooking_time(params[:cookingtime])
 
     respond_to do |format|
       #format.html # index.html.erb
