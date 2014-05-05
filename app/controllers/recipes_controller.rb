@@ -51,7 +51,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(:author => params[:author], :steps => params[:steps], :recipename => params[:recipename])
+    @recipe = Recipe.new(:cookingtime => params[:cookingtime], :author => params[:author], :steps => params[:steps], :recipename => params[:recipename])
 
     respond_to do |format|
       if @recipe.save
