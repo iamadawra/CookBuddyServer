@@ -10,6 +10,17 @@ class RecipesController < ApplicationController
     end
   end
 
+  # GET /recipes
+  # GET /find_recipe_by_author.json
+  def find_recipe_by_author
+    @recipes = Recipe.search(params[:author])
+
+    respond_to do |format|
+      #format.html # index.html.erb
+      format.json { render json: @recipes }
+    end
+  end
+
   # GET /recipes/1
   # GET /recipes/1.json
   def show
@@ -40,7 +51,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(:time => params[:time], :author => params[:author], :steps => params[:steps], :recipename => params[:recipename])
+    @recipe = Recipe.new(:author => params[:author], :steps => params[:steps], :recipename => params[:recipename])
 
     respond_to do |format|
       if @recipe.save

@@ -11,5 +11,13 @@
 #
 
 class Recipe < ActiveRecord::Base
-  attr_accessible :author, :steps,:time
+  attr_accessible :author, :steps, :recipename
+
+  def self.search(search)
+    if search
+      where('author ILIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 end
