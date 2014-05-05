@@ -12,11 +12,19 @@
 #
 
 class Recipe < ActiveRecord::Base
-  attr_accessible :author, :steps, :recipename
+  attr_accessible :author, :steps, :recipename, :cookingtime
 
   def self.search(search)
     if search
       where('author ILIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+  def self.find_recipes_by_cooking_time(search)
+    if search
+      where('cookingtime ILIKE ?', "%#{search}%")
     else
       scoped
     end

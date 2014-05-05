@@ -10,7 +10,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # GET /recipes
   # GET /find_recipe_by_author.json
   def find_recipe_by_author
     @recipes = Recipe.search(params[:author])
@@ -20,6 +19,17 @@ class RecipesController < ApplicationController
       format.json { render json: @recipes }
     end
   end
+
+  # GET /find_recipes_by_cooking_time.json
+  def find_recipes_by_cooking_time
+    @recipes = Recipe.search_by_cooking_time(params[:cookingtime])
+
+    respond_to do |format|
+      #format.html # index.html.erb
+      format.json { render json: @recipes }
+    end
+  end
+
 
   # GET /recipes/1
   # GET /recipes/1.json

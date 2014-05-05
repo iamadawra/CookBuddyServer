@@ -5,7 +5,7 @@ CookBuddy::Application.routes.draw do
   resources :recipes
 
   match "/find_recipe_by_author.json" => "recipes#find_recipe_by_author", via: [:post]
-
+  match "/find_recipe_by_cooking_time" => "recipes#find_recipe_by_cooking_time", via: [:post]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
