@@ -22,7 +22,7 @@ class Recipe < ActiveRecord::Base
     end
   end
 
-  def self.find_recipes_by_cooking_time(search)
+  def self.search_recipes_by_cooking_time(search)
     if search
       where('cookingtime ILIKE ?', "%#{search}%")
     else
