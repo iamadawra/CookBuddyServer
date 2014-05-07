@@ -9,6 +9,7 @@
 #  updated_at  :datetime         not null
 #  recipename  :string(255)
 #  cookingtime :string(255)
+#  ingredients :string(255)
 #
 
 class Recipe < ActiveRecord::Base
