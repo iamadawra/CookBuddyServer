@@ -13,7 +13,7 @@
 #
 
 class Recipe < ActiveRecord::Base
-  attr_accessible :author, :steps, :recipename, :cookingtime
+  attr_accessible :author, :steps, :recipename, :cookingtime, :ingredients
 
   def self.search(search)
     if search
